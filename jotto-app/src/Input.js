@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Input({ secretWord }) {
+export default function Input({ success, secretWord }) {
   const [currentGuess, setCurrentGuess] = React.useState("");
+
+  if (success) {
+    return <div data-test="component-input"></div>;
+  }
   return (
     <div data-test="component-input">
       <form className="form-inline">
