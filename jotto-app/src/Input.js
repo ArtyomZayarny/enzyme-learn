@@ -14,7 +14,14 @@ export default function Input({ secretWord }) {
           placeholder="enter guess"
           onChange={(e) => setCurrentGuess(e.target.value)}
         />
-        <button data-test="submit-button" className="btn btn-primary mb-2">
+        <button
+          data-test="submit-button"
+          className="btn btn-primary mb-2"
+          onClick={(e) => {
+            e.preventDefault();
+            setCurrentGuess("");
+          }}
+        >
           Submit
         </button>
       </form>
